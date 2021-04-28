@@ -1,6 +1,4 @@
 # project_1
-Locked project
-
 Initializating project of a "smart door lock" with internet connection.
 
 There are a bunch of possibilities regarding the evolution of the project, including sms messages, IP cam integration, finger print integration, etc...
