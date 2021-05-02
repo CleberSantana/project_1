@@ -21,19 +21,22 @@ def getserial():
  
   return cpuserial
 
+#send sms
 def send_sms():
     try:
-        account_sid = os.environ['AC8ca789377fc8f14367872843fdbfb774']
-        auth_token = os.environ['fd804885b5a1e8a2e5a918682c53bad1']
+        print (os.getenv('TWILIO_ACCOUNT_SID'))
+        print (os.getenv('TWILIO_AUTH_TOKEN'))        
+        account_sid = os.environ['TWILIO_ACCOUNT_SID']
+        auth_token = os.environ['TWILIO_AUTH_TOKEN']
         client = Client(account_sid, auth_token)
         
         message = Client.messages.create(
-                         body="test",
-                         from_='++5541988248333',
-                         to='+5541988248333'
+                         from_='+5541988248333',
+                         to='+5541988248333',
+                         body="test"
                      )
     except:
-        print("error")
+         print(message.sid)
 
     #print(message.sid)
 
