@@ -1,8 +1,9 @@
 import RPi.GPIO as gpio
 import time
-import teste
+import loop
 
+#loop
 while True:
-    teste.verify_password()
+    loop.verify_password()
 
 gpio.cleanup()
