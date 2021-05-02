@@ -1,5 +1,7 @@
 import RPi.GPIO as gpio
 import time
+import json
+import data_exchange
 
 #setting GPIO
 gpio.setmode(gpio.BCM)
@@ -46,6 +48,7 @@ def verify_password():
             time.sleep(1)
             gpio.output(17,gpio.LOW)
             print("Password")
+            data_exchange.msg('usuário1', password)
             return
         if a == safe_password:
             gpio.output(17,gpio.HIGH)
