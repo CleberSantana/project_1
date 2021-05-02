@@ -19,14 +19,16 @@ def getserial():
  
   return cpuserial
 
-#python to json
-def msg(user:str, password:int):
+#str to json
+def msg(user:str, password:int, pass_type:str):
+    serial = getserial()
     data = {'user_info':user,
-            'end': "rua 1",
+            'address': "rua 1",
+            'password_type': pass_type,
             'password':password,
             'time': current_time,
-            'serial': getserial()
+            'serial': serial
             }
-    data = json.loads('"' + str(data) + '"')
-    new_string = json.dumps(data)
-    print(new_string)
+    data = json.dumps(str(data))
+    #new_string = json.dumps(data)
+    print(data)
