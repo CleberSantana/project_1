@@ -1,5 +1,7 @@
 import json
 import datetime
+import os
+from twilio.rest import Client
 
 now = datetime.datetime.now()
 current_time = now.strftime("%H:%M:%S")
@@ -19,6 +21,22 @@ def getserial():
  
   return cpuserial
 
+def send_sms():
+    try:
+        account_sid = os.environ['AC8ca789377fc8f14367872843fdbfb774']
+        auth_token = os.environ['fd804885b5a1e8a2e5a918682c53bad1']
+        client = Client(account_sid, auth_token)
+        
+        message = Client.messages.create(
+                         body="test",
+                         from_='++5541988248333',
+                         to='+5541988248333'
+                     )
+    except:
+        print("error")
+
+    #print(message.sid)
+
 #str to json
 def msg(user:str, password:int, pass_type:str):
     serial = getserial()
@@ -32,3 +50,4 @@ def msg(user:str, password:int, pass_type:str):
     data = json.dumps(str(data))
     #new_string = json.dumps(data)
     print(data)
+    send_sms()

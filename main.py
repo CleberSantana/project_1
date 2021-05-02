@@ -1,7 +1,8 @@
 import RPi.GPIO as gpio
 import time
 import loop
-import pywhatkit
+import os
+from twilio.rest import Client
 
 #loop
 while True:

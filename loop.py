@@ -2,7 +2,6 @@ import RPi.GPIO as gpio
 import time
 import json
 import data_exchange
-import pywhatkit
 
 #setting GPIO
 gpio.setwarnings(False)
@@ -51,7 +50,6 @@ def verify_password():
             gpio.output(17,gpio.LOW)
             print("Password")
             data_exchange.msg('user1', password, pass_type = "Password")
-            pywhatkit.sendwhatmsg('+5541988248333', 'test', 6, 6)
             return
         if a == safe_password:
             gpio.output(17,gpio.HIGH)
