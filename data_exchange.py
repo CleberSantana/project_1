@@ -24,10 +24,10 @@ def getserial():
 #send sms
 def send_sms():
     try:
-        print (os.getenv('TWILIO_ACCOUNT_SID'))
-        print (os.getenv('TWILIO_AUTH_TOKEN'))        
-        account_sid = os.environ['TWILIO_ACCOUNT_SID']
-        auth_token = os.environ['TWILIO_AUTH_TOKEN']
+        print (os.getenv('ACCOUNT_SID'))
+        print (os.getenv('AUTH_TOKEN'))        
+        account_sid = os.environ['ACCOUNT_SID']
+        auth_token = os.environ['AUTH_TOKEN']
         client = Client(account_sid, auth_token)
         
         message = Client.messages.create(
@@ -37,8 +37,6 @@ def send_sms():
                      )
     except:
          print(message.sid)
-
-    #print(message.sid)
 
 #str to json
 def msg(user:str, password:int, pass_type:str):
