@@ -8,13 +8,27 @@ The main goal is to communicate it with an IoT cloud service and ensure a safe m
 ## Environment setup
 To install all dependencies for this project using included packages on CPython, use the following commands on terminal.
 
+### For development
+
+A virtual environment is recommended, but optional.
+
 - On Windows:
 ```sh
-python -m pip install -r requirements_windows.txt
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements_windows.txt
 ```
-> In Windows, as some required headers files aren't available, GPIOSimulator is used instead of RPi.GPIO to allow development on this platform.
+> In Windows, as some required headers files aren't available, GPIOSimulator is used instead of RPi.GPIO to allow development and (limited) testing on this platform.
 
 - On Ubuntu:
+```sh
+python3 -m venv .venv
+source ./.venv/bin/activate
+python3 -m pip install -r requirements_others.txt
+```
+> If `venv` package is missing, use `apt-get update -y && apt-get install -y python3-venv` before
+
+### For execution on Raspiberry
 ```sh
 python3 -m pip install -r requirements_others.txt
 ```
