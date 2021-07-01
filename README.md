@@ -13,7 +13,7 @@ To install all dependencies for this project using included packages on CPython,
 A virtual environment is recommended, but optional.
 
 - On Windows:
-```sh
+```ps
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements_windows.txt
