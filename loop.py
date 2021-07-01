@@ -1,7 +1,10 @@
-import RPi.GPIO as gpio
 import time
-import json
 import data_exchange
+import os
+if os.name == 'nt':
+    from RPiSim.GPIO import GPIO as gpio
+else:   
+    import RPi.GPIO as gpio
 
 #setting GPIO
 gpio.setwarnings(False)
