@@ -1,8 +1,9 @@
-import RPi.GPIO as gpio
-import time
 import loop
 import os
-from twilio.rest import Client
+if os.name == 'nt':
+    from RPiSim.GPIO import GPIO as gpio
+else:   
+    import RPi.GPIO as gpio
 
 #loop
 while True:
