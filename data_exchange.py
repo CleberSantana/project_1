@@ -31,8 +31,8 @@ def send_sms():
         client = Client(account_sid, auth_token)
         
         message = Client.messages.create(
-                         from_='+5541988248333',
-                         to='+5541988248333',
+                         from_='',
+                         to='',
                          body="test"
                      )
     except:
